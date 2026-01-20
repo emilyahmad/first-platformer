@@ -327,7 +327,7 @@ sources/0 = SubResource("TileSetAtlasSource_3uyhe")
 [sub_resource type="Curve2D" id="Curve2D_8wi1m"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -39, -32, 0, 0, 0, 0, -39, -75)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50)
 }
 point_count = 2
 
@@ -348,5 +348,8 @@ rotation = -0.000682003
 speed = 2.5
 jump_power = 10.0
 
-[node name="MovingPlatformLarge" parent="." instance=ExtResource("3_8wi1m")]
+[node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatformLarge" parent="MovingPlatforms" instance=ExtResource("3_8wi1m")]
+position = Vector2(-32, -55)
 curve = SubResource("Curve2D_8wi1m")
