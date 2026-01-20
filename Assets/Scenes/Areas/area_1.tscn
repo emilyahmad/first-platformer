@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp76dubfu8l4w"]
+[gd_scene load_steps=7 format=3 uid="uid://bp76dubfu8l4w"]
 
 [ext_resource type="Texture2D" uid="uid://6nqddcv4xuga" path="res://Assets/Sprites/tiles_1.png" id="1_uidp5"]
 [ext_resource type="PackedScene" uid="uid://b437gbf03fxqw" path="res://Assets/Scenes/player.tscn" id="2_3uyhe"]
+[ext_resource type="PackedScene" uid="uid://gv78lwduji8a" path="res://Assets/Scenes/moving_platform_large.tscn" id="3_8wi1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uyhe"]
 texture = ExtResource("1_uidp5")
@@ -323,6 +324,13 @@ terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(0.423854, 0.28047, 0.249354, 1)
 sources/0 = SubResource("TileSetAtlasSource_3uyhe")
 
+[sub_resource type="Curve2D" id="Curve2D_8wi1m"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -39, -32, 0, 0, 0, 0, -39, -75)
+}
+point_count = 2
+
 [node name="Area1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -339,3 +347,6 @@ layer_1/tile_data = PackedInt32Array(131081, 131072, 6, 65545, 131072, 5, 9, 131
 rotation = -0.000682003
 speed = 2.5
 jump_power = 10.0
+
+[node name="MovingPlatformLarge" parent="." instance=ExtResource("3_8wi1m")]
+curve = SubResource("Curve2D_8wi1m")
